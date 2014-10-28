@@ -6,6 +6,39 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/static/base.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script>
+       		var rrPartnerId = "544df2ef1e994b19a0926be8";
+       		var rrApi = {}; 
+       		var rrApiOnReady = rrApiOnReady || [];
+       		rrApi.addToBasket = rrApi.order = rrApi.categoryView = rrApi.view = 
+           		rrApi.recomMouseDown = rrApi.recomAddToCart = function() {};
+       		(function(d) {
+           		var ref = d.getElementsByTagName('script')[0];
+           		var apiJs, apiJsId = 'rrApi-jssdk';
+           		if (d.getElementById(apiJsId)) return;
+           		apiJs = d.createElement('script');
+           		apiJs.id = apiJsId;
+           		apiJs.async = true;
+           		apiJs.src = "//cdn.retailrocket.ru/content/javascript/api.js";
+           		ref.parentNode.insertBefore(apiJs, ref);
+       		}(document));
+		</script>
+		<script type="text/javascript">
+	rrApiOnReady.push(function() {
+		try{ rrApi.view(498);
+			 rrApi.addToBasket(498); 
+			 rrApi.order({
+            transaction: 49899,
+            items: [
+                { id: 498, qnt:1,  price: 10.54}
+            ]
+        });
+			} catch(e) {}
+		
+
+	})
+		</script>
 	</head>
 
 	<body>
